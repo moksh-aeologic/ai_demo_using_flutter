@@ -8,3 +8,6 @@ class TFLabels {
   static String liveObjectLabel = "assets/tenserflow_models/live_object_model/ssd_mobilenet.txt";
 }
 String faceMaskImage = "assets/images/splash.png";
+String drawerImage = "assets/images/drawer.jpg";
+String splashAsset= 'assets/animation/splash.json';
+String faceDetectionImage= 'assets/images/face-detection.jpg';

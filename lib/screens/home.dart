@@ -2,6 +2,7 @@ import 'package:ais_demo/screens/face_mask_detector.dart';
 import 'package:flutter/material.dart';
 
 import '../res/strings.dart';
+import 'face_detector.dart';
 import 'live_object_detector.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(child: SizedBox()),
+            Image.asset(
+              drawerImage,
+              fit: BoxFit.cover,
+              height: 200,
+            ),
             ListTile(
               leading: CircleAvatar(
                 backgroundImage: AssetImage(faceMaskImage),
@@ -42,6 +47,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   MaterialPageRoute(
                       builder: (_) => const LiveObjectDetectorScreen()),
                   (Route<dynamic> route) => false),
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(faceDetectionImage),
+              ),
+              title: const Text("Face Detection"),
+              onTap: () => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => const FaceDetectorScreen()),
+                (Route<dynamic> route) => false,
+              ),
             ),
           ],
         ),

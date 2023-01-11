@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
+import '../res/strings.dart';
 import 'home.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   afterSplash() {
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(milliseconds: 4500), 
       () => Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (_) => const HomeScreen())),
     );
@@ -32,13 +34,23 @@ class _SplashScreenState extends State<SplashScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Center(
-            child: Image.asset(
-              'assets/images/splash.png',
-              height: 230,
-              width: 230,
-            ),
-          ),
+           Center(
+        child: Lottie.asset(
+          splashAsset,
+          alignment: Alignment.center,
+          fit: BoxFit.cover,
+          height: 200,
+          width: 200,
+          repeat: false,  
+        ),
+      ),
+          // Center(
+          //   child: Image.asset(
+          //     'assets/images/splash.png',
+          //     height: 230,
+          //     width: 230,
+          //   ),
+          // ),
           const SizedBox(height: 40),
           const Text(
             "Flutter Artificial Intelligence",
