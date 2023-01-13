@@ -76,7 +76,7 @@ class _FaceDetectorScreenState extends State<FaceDetectorScreen> {
         top: 0,
         left: 0,
         width: size.width,
-        height: size.height - 250,
+        height: size.height,
         child: Container(
           child: (cameraController!.value.isInitialized)
               ? AspectRatio(
@@ -130,7 +130,7 @@ class _FaceDetectorScreenState extends State<FaceDetectorScreen> {
 
   toggleCameraFrontOrBack() async {
     if (cameraLensDirection == CameraLensDirection.back) {
-      CameraLensDirection.front;
+      cameraLensDirection = CameraLensDirection.front;
     } else {
       cameraLensDirection = CameraLensDirection.back;
     }
@@ -156,7 +156,7 @@ class FaceDetectorPainter extends CustomPainter {
 
     final Paint paint = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = .2
+      ..strokeWidth = 2
       ..color = Colors.red;
 
     for (Face face in faces) {
