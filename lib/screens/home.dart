@@ -1,3 +1,4 @@
+import 'package:ais_demo/screens/captions_generator.dart';
 import 'package:ais_demo/screens/face_mask_detector.dart';
 import 'package:flutter/material.dart';
 
@@ -59,6 +60,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     builder: (_) => const FaceDetectorScreen()),
                 (Route<dynamic> route) => false,
               ),
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(faceMaskImage),
+              ),
+              title: const Text("Captions Generator"),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const CaptionsGeneratorScreen())),
             ),
           ],
         ),
