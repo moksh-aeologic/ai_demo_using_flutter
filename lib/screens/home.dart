@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../res/strings.dart';
 import 'face_detector.dart';
 import 'live_object_detector.dart';
+import 'pose_estimation.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -56,8 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: const Text("Face Detection"),
               onTap: () => Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(
-                    builder: (_) => const FaceDetectorScreen()),
+                MaterialPageRoute(builder: (_) => const FaceDetectorScreen()),
                 (Route<dynamic> route) => false,
               ),
             ),
@@ -70,6 +70,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(
                       builder: (_) => const CaptionsGeneratorScreen())),
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(faceMaskImage),
+              ),
+              title: const Text("Pose Estimation"),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const PoseEstimation())),
             ),
           ],
         ),

@@ -60,6 +60,7 @@ flutter:
     - assets/animation/
     - assets/tenserflow_models/facemask_model/
     - assets/tenserflow_models/live_object_model/
+    - assets/tenserflow_models/pose_estimation_model/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
